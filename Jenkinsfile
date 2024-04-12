@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    docker
     tools {
         maven 'Maven Home'
     }
@@ -11,7 +10,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Docker Build & Push') {
+        stage('Initialize'){
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
+        stage('Docker Build') {
              steps {
                  sh 'docker build -t 72821/spring.app.jar:latest .'
              }
