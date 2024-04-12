@@ -10,15 +10,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Docker build & Push') {
-            steps {
-                script {
-                    withDockerRegistry(credentialsId: 'dockerhubid') {
-                       sh 'docker build -t 72821/spring.app.jar .'
-                       sh 'docker push'
-                    }
+        stage('Docker Build') {
+                   steps {
+                        sh 'docker build -t 72821/spring.app.jar:latest .'
+                  }
                 }
-            }
         }
 
     }
