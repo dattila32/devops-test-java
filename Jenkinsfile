@@ -1,21 +1,15 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven-3.8.1'
+    }
 
     stages {
-        stage('Hello') {
+        stage('Maven build') {
             steps {
-                echo 'Hello World'
+                sh 'mvn clean install'
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'DEploy'
-            }
-        }
+
     }
 }
