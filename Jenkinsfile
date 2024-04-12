@@ -10,8 +10,6 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Initialize') {
-
         stage('Initialize'){
                steps{
                    script {
