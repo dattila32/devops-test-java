@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerhubid') {
-                       sh 'docker build -t 72821/spring.app.jar:tag123'
+                       sh 'docker build -t 72821/spring.app.jar .'
                        sh 'docker push'
                     }
                 }
