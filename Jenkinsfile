@@ -12,8 +12,13 @@ pipeline {
         }
         stage('Docker build') {
                     steps {
+                    script {
+                        withDockerRegistry(credentialsId: 'docker-id', toolName: 'Docker Home') {
                         sh 'docker build -t spring-app.jar .'
+                        sh 'docker push'
+                        }
                     }
-                }
+                    }
+        }
     }
 }
