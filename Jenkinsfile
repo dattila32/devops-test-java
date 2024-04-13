@@ -10,7 +10,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Docker build') {
+        stage('Docker build & Push') {
                     steps {
                     script {
                         withDockerRegistry(credentialsId: 'docker-id', toolName: 'Docker Home') {
