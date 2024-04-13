@@ -15,7 +15,7 @@ pipeline {
                     script {
                         withDockerRegistry(credentialsId: 'docker-id', toolName: 'Docker Home') {
                         sh 'docker build -t spring-app.jar .'
-                        sh 'docker push'
+                        sh 'docker push 72821/spring-app.jar:latest'
                         }
                     }
                     }
