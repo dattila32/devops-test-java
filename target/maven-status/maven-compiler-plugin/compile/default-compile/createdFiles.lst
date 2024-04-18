@@ -1,1 +1,5 @@
 com/attila/maven/test/demo/DemoApplication.class
+com/attila/maven/test/demo/repository/PersonRepository.class
+com/attila/maven/test/demo/entity/Person.class
+com/attila/maven/test/demo/controller/PersonController.class
+com/attila/maven/test/demo/service/PersonService.class
